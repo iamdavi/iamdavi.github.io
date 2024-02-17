@@ -1,0 +1,34 @@
+:root {
+	--main-blue-color: #0057B7;
+	--main-yellow-color: #FFDD00;
+}
+
+.bg-main-blue-color {
+	background-color: var(--main-blue-color);
+	color: whitesmoke;
+}
+
+.bg-main-yellow-color {
+	background-color: var(--main-yellow-color);
+}
+
+body {
+	background-color: var(--main-yellow-color);
+}
+
+.btn {
+	text-transform: uppercase;
+	font-family: monospace;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+.btn-main-blue {
+	background-color: var(--main-blue-color);
+}
+
+#launch-alphabet-button {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+}

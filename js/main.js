@@ -115,6 +115,7 @@ class CardListComponent {
 		li.classList.add('list-group-item', 'vstack')
 
 		const liUcraTitle = document.createElement('div')
+		liUcraTitle.classList.add('fw-bold')
 		const liSpainValue = document.createElement('div')
 
 		const phonemeSpan = document.createElement('span')

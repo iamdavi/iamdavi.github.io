@@ -32,3 +32,20 @@ body {
 	bottom: 1rem;
 	right: 1rem;
 }
+
+.text-color-main-yellow {
+	color: var(--main-yellow-color);
+}
+
+.text-phoneme {
+	font-size: 1rem;
+	margin-left: .5rem;
+}
+
+.text-phoneme::after {
+	content: "/";
+}
+
+.text-phoneme::before {
+	content: "/";
+}

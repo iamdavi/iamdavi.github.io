@@ -37,22 +37,25 @@ class CardComponent {
 	title
 	subTitle
 	phoneme
+	identifier
 	contentAppContainer 
 	cardWrapper
 
-	constructor(title, subTitle = null, phoneme = null) {
+	constructor(title, subTitle = null, phoneme = null, identifier, icon = null) {
 		this.title = title
 		this.subTitle = subTitle
 		this.phoneme = phoneme
+		this.identifier = identifier
+		this.icon = icon
 
 		this.contentAppContainer = document.getElementById('contentAppContainer')
 	}
 
 	create() {
 		const cardHeaderHTML = `
-			<div class="card-body p-0 clickable" data-bs-toggle="collapse" data-bs-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">
+			<div class="card-body p-0 clickable" data-bs-toggle="collapse" data-bs-target="#collapse${this.identifier}" aria-expanded="false" aria-controls="collapse${this.identifier}">
 				<div class="card-header d-flex align-items-center gap-3">
-					<i class="bi bi-palette-fill fs-5"></i>
+					<i class="bi ${this.icon} fs-5"></i>
 					<div class="vstack">
 						<h5 class="card-title">
 							${this.title}
@@ -96,11 +99,13 @@ class CardComponent {
 
 class CardListComponent {
 	card
+	identifier
 	listDivWrapper
 	listUlWrapper
 
-	constructor(card) {
+	constructor(card, identifier) {
 		this.card = card
+		this.identifier = identifier
 	}
 
 	create() {
@@ -109,7 +114,7 @@ class CardListComponent {
 
 		const listDivWrapper = document.createElement('div')
 		listDivWrapper.classList.add('collapse')
-		listDivWrapper.id = "collapseColors"
+		listDivWrapper.id = `collapse${this.identifier}`
 		listDivWrapper.appendChild(listUlWrapper)
 
 		this.listUlWrapper = listUlWrapper
@@ -146,12 +151,22 @@ for (const letter of alphabetJsonData) {
 	new AlphabetTableRow(letter)
 }
 
-const colorCard = new CardComponent('Кольори', 'Colores', 'Kolʹory')
+const colorCard = new CardComponent('Кольори', 'Colores', 'Kolʹory', 'colors', 'bi-palette-fill')
 colorCard.create()
 
-const colorList = new CardListComponent(colorCard)
+const colorList = new CardListComponent(colorCard, 'colors')
 colorList.create()
 
 for (const color of colorsJsonData) {
 	colorList.addElement(color)
+}
+
+const daysCard = new CardComponent('Дні тижня', 'Días de la semana', 'Dnі tiʐnya', 'days', 'bi-calendar-day')
+daysCard.create()
+
+const daysList = new CardListComponent(daysCard, 'days')
+daysList.create()
+
+for (const day of daysJsonData) {
+	daysList.addElement(day)
 }

@@ -50,7 +50,7 @@ class CardComponent {
 
 	create() {
 		const cardHeaderHTML = `
-			<div class="card-body p-0">
+			<div class="card-body p-0 clickable" data-bs-toggle="collapse" data-bs-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">
 				<div class="card-header d-flex align-items-center gap-3">
 					<i class="bi bi-palette-fill fs-5"></i>
 					<div class="vstack">
@@ -96,18 +96,25 @@ class CardComponent {
 
 class CardListComponent {
 	card
-	listWrapper
+	listDivWrapper
+	listUlWrapper
 
 	constructor(card) {
 		this.card = card
 	}
 
 	create() {
-		const listWrapper = document.createElement('ul')
-		listWrapper.classList.add('list-group', 'list-group-flush')
+		const listUlWrapper = document.createElement('ul')
+		listUlWrapper.classList.add('list-group', 'list-group-flush')
 
-		this.listWrapper = listWrapper
-		this.card.addListComponent(listWrapper)
+		const listDivWrapper = document.createElement('div')
+		listDivWrapper.classList.add('collapse')
+		listDivWrapper.id = "collapseColors"
+		listDivWrapper.appendChild(listUlWrapper)
+
+		this.listUlWrapper = listUlWrapper
+
+		this.card.addListComponent(listDivWrapper)
 	}
 
 	addElement(colorData) {
@@ -129,7 +136,7 @@ class CardListComponent {
 		li.appendChild(liUcraTitle)
 		li.appendChild(liSpainValue)
 
-		this.listWrapper.appendChild(li)
+		this.listUlWrapper.appendChild(li)
 	}
 }
 

@@ -51,3 +51,7 @@ body {
 .text-phoneme::before {
 	content: "/";
 }
+
+.clickable {
+	cursor: pointer;
+}

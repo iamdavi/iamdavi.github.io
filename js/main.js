@@ -92,7 +92,6 @@ class CardComponent {
 	}
 
 	addListComponent(listComponent) {
-		console.log(listComponent);
 		this.cardWrapper.appendChild(listComponent)
 	}
 }
@@ -145,28 +144,34 @@ class CardListComponent {
 	}
 }
 
-class ColorComponent {}
-
+// Letters
 for (const letter of alphabetJsonData) {
 	new AlphabetTableRow(letter)
 }
 
+// Colors
 const colorCard = new CardComponent('Кольори', 'Colores', 'Kolʹory', 'colors', 'bi-palette-fill')
 colorCard.create()
-
 const colorList = new CardListComponent(colorCard, 'colors')
 colorList.create()
-
 for (const color of colorsJsonData) {
 	colorList.addElement(color)
 }
 
+// Days
 const daysCard = new CardComponent('Дні тижня', 'Días de la semana', 'Dnі tiʐnya', 'days', 'bi-calendar-day')
 daysCard.create()
-
 const daysList = new CardListComponent(daysCard, 'days')
 daysList.create()
-
 for (const day of daysJsonData) {
 	daysList.addElement(day)
+}
+
+// Months
+const monthsCard = new CardComponent('Місяці року', 'Los meses del año', 'Mіsyatzі rokoo', 'months', 'bi-calendar')
+monthsCard.create()
+const monthsList = new CardListComponent(monthsCard, 'months')
+monthsList.create()
+for (const month of monthsJsonData) {
+	monthsList.addElement(month)
 }

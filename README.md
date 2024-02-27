@@ -8,6 +8,12 @@
 
 [Página de los días de la semana](https://www.lingohut.com/es/v715618/lecciones-de-ucraniano-los-d%C3%ADas-de-la-semana)
 
+[Página de los meses](https://www.lingohut.com/es/v715619/lecciones-de-ucraniano-los-meses-del-a%C3%B1o)
+
+# ToDo
+
+- Hacer que la clase CardList herede de Card para ahorrar propiedades y reusar métodos
+
 # Colaboradores
 
 Anhelina & Davidka

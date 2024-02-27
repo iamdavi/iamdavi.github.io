@@ -6,6 +6,8 @@
 
 [Página de los colores](https://www.lingohut.com/es/v715629/lecciones-de-ucraniano-los-colores)
 
+[Página de los días de la semana](https://www.lingohut.com/es/v715618/lecciones-de-ucraniano-los-d%C3%ADas-de-la-semana)
+
 # Colaboradores
 
 Anhelina & Davidka

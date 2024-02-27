@@ -1,6 +1,6 @@
 <?php
 
-$handle = fopen("../data/txt/colors.txt", "r");
+$handle = fopen("../data/txt/diassemana.txt", "r");
 if ($handle) {
 	$colorsArray = [];
 	$colorData = [];

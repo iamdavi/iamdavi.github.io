@@ -60,3 +60,7 @@ body {
 	border-bottom-right-radius: var(--bs-border-radius) !important;
 	border-bottom-left-radius: var(--bs-border-radius) !important;
 }
+
+.card.text-bg-primary {
+	background-color: var(--main-blue-color) !important;
+}

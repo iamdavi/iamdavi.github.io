@@ -70,8 +70,11 @@ def main():
 		json.dump(jsonString, json_file, ensure_ascii=False)
 
 if __name__ == "__main__":
-	with open('allData.json', 'r', encoding='ascii') as json_file:
+	with open('allData.json', 'r', encoding='utf-8') as json_file:
 		content = json.loads(json_file.read())
-		print(content)
 
+
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(content, f, ensure_ascii=False)
+print(content)
     # main()

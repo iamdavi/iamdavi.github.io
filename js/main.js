@@ -38,7 +38,7 @@ class CardComponent {
 	subTitle
 	phoneme
 	identifier
-	contentAppContainer 
+	contentAppContainer
 	cardWrapper
 
 	constructor(title, subTitle = null, phoneme = null, identifier, icon = null) {
@@ -59,9 +59,7 @@ class CardComponent {
 					<div class="vstack">
 						<h5 class="card-title">
 							${this.title}
-							<span class="text-phoneme text-color-main-yellow">
-								${this.phoneme}
-							</span>
+							${this.phoneme ? '<span class="text-phoneme text-color-main-yellow">' + this.phoneme + '</span>' : ''}
 						</h5>
 						<h6 class="card-subtitle">
 							${this.subTitle}
@@ -149,29 +147,13 @@ for (const letter of alphabetJsonData) {
 	new AlphabetTableRow(letter)
 }
 
-// Colors
-const colorCard = new CardComponent('Кольори', 'Colores', 'Kolʹory', 'colors', 'bi-palette-fill')
-colorCard.create()
-const colorList = new CardListComponent(colorCard, 'colors')
-colorList.create()
-for (const color of colorsJsonData) {
-	colorList.addElement(color)
-}
+for (const [lessonKey, content] of Object.entries(allDataJsonData)) {
+	const card = new CardComponent(lessonKey + '. ' + content.title, '', '', lessonKey, '')
+	card.create()
+	const cardList = new CardListComponent(card, lessonKey)
+	cardList.create()
 
-// Days
-const daysCard = new CardComponent('Дні тижня', 'Días de la semana', 'Dnі tiʐnya', 'days', 'bi-calendar-day')
-daysCard.create()
-const daysList = new CardListComponent(daysCard, 'days')
-daysList.create()
-for (const day of daysJsonData) {
-	daysList.addElement(day)
-}
-
-// Months
-const monthsCard = new CardComponent('Місяці року', 'Los meses del año', 'Mіsyatzі rokoo', 'months', 'bi-calendar')
-monthsCard.create()
-const monthsList = new CardListComponent(monthsCard, 'months')
-monthsList.create()
-for (const month of monthsJsonData) {
-	monthsList.addElement(month)
+	for (const [elementKey, elementData] of Object.entries(content.content)) {
+		cardList.addElement(elementData)
+	}
 }

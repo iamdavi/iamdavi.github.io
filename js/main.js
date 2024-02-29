@@ -120,25 +120,30 @@ class CardListComponent {
 	}
 
 	addElement(colorData) {
-		const li = document.createElement('li')
-		li.classList.add('list-group-item', 'vstack')
+		const cardListHtml = `
+		<li class="list-group-item hstack">
+			<div class="flex-fill">
+				<div class="fw-bold">
+					${colorData.ucra}<span class="text-phoneme">${colorData.phoneme}</span>
+				</div>
+				<div>
+					${colorData.espa}
+				</div>
+			</div>
+			<div class="p-2" data-media-url="${colorData.audio}">
+				<i class="bi bi-play-circle-fill fs-4 isMediaChild"></i>
+			</div>
+		</li>`;
 
-		const liUcraTitle = document.createElement('div')
-		liUcraTitle.classList.add('fw-bold')
-		const liSpainValue = document.createElement('div')
-
-		const phonemeSpan = document.createElement('span')
-		phonemeSpan.classList.add('text-phoneme')
-		phonemeSpan.innerText = colorData.phoneme
-
-		liSpainValue.innerText = colorData.espa
-		liUcraTitle.innerHTML = colorData.ucra
-		liUcraTitle.appendChild(phonemeSpan)
-
-		li.appendChild(liUcraTitle)
-		li.appendChild(liSpainValue)
+		const li = this.createElementFromHTML(cardListHtml)
 
 		this.listUlWrapper.appendChild(li)
+	}
+
+	createElementFromHTML(htmlString) {
+		var div = document.createElement('div');
+		div.innerHTML = htmlString.trim();
+		return div.firstChild;
 	}
 }
 
@@ -153,7 +158,20 @@ for (const [lessonKey, content] of Object.entries(allDataJsonData)) {
 	const cardList = new CardListComponent(card, lessonKey)
 	cardList.create()
 
-	for (const [elementKey, elementData] of Object.entries(content.content)) {
+	for (const elementData of Object.values(content.content)) {
 		cardList.addElement(elementData)
 	}
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	const audioBaseUrl = "https://www.lingohut.com/flash/lht/mp3/600001/"
+	document.addEventListener('click', (e) => {
+		let target = e.target
+		if (target.hasAttribute('data-media-url') || target.classList.contains('isMediaChild')) {
+			target = target.classList.contains('isMediaChild') ? target.closest('div') : target
+			const url = audioBaseUrl + target.dataset.mediaUrl + '.mp3'
+			const audio = new Audio(url)
+			audio.play()
+		}
+	})
+})

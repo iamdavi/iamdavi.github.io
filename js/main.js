@@ -147,6 +147,106 @@ class CardListComponent {
 	}
 }
 
+class StartTestForm {
+	formLessonSelectId = 'lessonSelect'
+
+	formLesson
+
+	lessonOptions
+	lessonSelect
+	lessonLabel
+	lessonButton
+
+	constructor() {
+		this.lessonButton = this.createLessonButton()
+		this.lessonSelect = this.createLessonSelect()
+		this.lessonLabel = this.createLessonLabel()
+
+		this.formLesson = new ProgressBar()
+
+		this.createLayout()
+	}
+
+	createLessonButton() {
+		const button = document.createElement('button')
+		button.classList.add('btn', 'btn-primary', 'w-100')
+		button.innerText = 'Empezar'
+		button.setAttribute('disabled', 'disabled')
+		button.addEventListener('click', (e) => {
+			const lessonId = this.lessonSelect.value
+			const testEvent = new CustomEvent('startTest', {
+				detail: {
+					'id': lessonId
+				}
+			})
+			document.dispatchEvent(testEvent)
+		})
+		return button
+	}
+
+	createLessonLabel() {
+		const label = document.createElement('label')
+		label.setAttribute('for', this.formLessonSelectId)
+		label.classList.add('form-label')
+		label.innerText = 'Clase de test'
+		return label
+	}
+
+	createLessonSelect() {
+		const select = document.createElement('select')
+		select.id = this.formLessonSelectId
+		select.classList.add('form-select')
+		this.addLessonOptions(select)
+		this.addSelectEvent(select)
+		return select
+	}
+
+	addLessonOptions(select) {
+		select.options[0] = new Option('Selecciona clase...', 0, true)
+		for (const [lessonKey, content] of Object.entries(allDataJsonData)) {
+			const lessonName = content.title
+			select.options[lessonKey] = new Option(lessonKey + '. ' + lessonName, lessonKey)
+		}
+	}
+
+	addSelectEvent(select) {
+		select.addEventListener('change', (e) => {
+			if (e.target.value > 0) {
+				this.lessonButton.removeAttribute('disabled')
+			} else {
+				this.lessonButton.setAttribute('disabled', 'disabled')
+			}
+		})
+	}
+
+	createLayout() {
+		const cardSelectLabel = document.createElement('div')
+		cardSelectLabel.classList.add('w-100')
+		cardSelectLabel.appendChild(this.lessonLabel)
+		cardSelectLabel.appendChild(this.lessonSelect)
+
+		const cardButton = document.createElement('div')
+		cardButton.appendChild(this.lessonButton)
+
+		const card = document.createElement('div')
+		card.classList.add('card', 'card-body', 'mb-3', 'd-flex', 'flex-column', 'gap-3', 'flex-sm-row', 'align-items-sm-center')
+		card.appendChild(cardSelectLabel)
+		card.appendChild(cardButton)
+
+		const divGrid = document.createElement('div')
+		divGrid.classList.add('col-12')
+		divGrid.appendChild(card)
+
+		document.getElementById('contentAppContainer').prepend(divGrid)
+	}
+
+	createElementFromHTML(htmlString) {
+		var div = document.createElement('div');
+		div.innerHTML = htmlString.trim();
+		return div.firstChild;
+	}
+}
+
 // Letters
 for (const letter of alphabetJsonData) {
 	new AlphabetTableRow(letter)
@@ -163,15 +263,17 @@ for (const [lessonKey, content] of Object.entries(allDataJsonData)) {
 	}
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-	const audioBaseUrl = "https://www.lingohut.com/flash/lht/mp3/600001/"
-	document.addEventListener('click', (e) => {
-		let target = e.target
-		if (target.hasAttribute('data-media-url') || target.classList.contains('isMediaChild')) {
-			target = target.classList.contains('isMediaChild') ? target.closest('div') : target
-			const url = audioBaseUrl + target.dataset.mediaUrl + '.mp3'
-			const audio = new Audio(url)
-			audio.play()
-		}
-	})
-})
+const startTestForm = new StartTestForm()
+
+// document.addEventListener("DOMContentLoaded", () => {
+// 	const audioBaseUrl = "https://www.lingohut.com/flash/lht/mp3/600001/"
+// 	document.addEventListener('click', (e) => {
+// 		let target = e.target
+// 		if (target.hasAttribute('data-media-url') || target.classList.contains('isMediaChild')) {
+// 			target = target.classList.contains('isMediaChild') ? target.closest('div') : target
+// 			const url = audioBaseUrl + target.dataset.mediaUrl + '.mp3'
+// 			const audio = new Audio(url)
+// 			audio.play()
+// 		}
+// 	})
+// })

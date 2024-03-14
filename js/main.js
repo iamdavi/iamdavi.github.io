@@ -150,8 +150,6 @@ class CardListComponent {
 class StartTestForm {
 	formLessonSelectId = 'lessonSelect'
 
-	formLesson
-
 	lessonOptions
 	lessonSelect
 	lessonLabel
@@ -161,8 +159,6 @@ class StartTestForm {
 		this.lessonButton = this.createLessonButton()
 		this.lessonSelect = this.createLessonSelect()
 		this.lessonLabel = this.createLessonLabel()
-
-		this.formLesson = new ProgressBar()
 
 		this.createLayout()
 	}

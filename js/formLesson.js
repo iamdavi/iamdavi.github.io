@@ -36,6 +36,18 @@ class FormCard {
         this.generateForm()
         this.generateQuestionsButtons()
         this.generateNextButton()
+
+        document.addEventListener('changeQuestion', (e) => {
+            const newIndex = e.detail.index
+            this.lessonIndex = newIndex
+            const question = this.lesson.content[newIndex]
+            document.dispatchEvent(new CustomEvent('newQuestion', {
+                'detail': {
+                    'index': newIndex,
+                    'question': question,
+                }
+            }))
+        })
     }
 
     generateProgressBar() {
@@ -63,7 +75,13 @@ class FormCard {
         const button = document.createElement('button')
         button.classList.add('btn', 'btn-primary', 'float-end')
         button.innerText = 'Siguiente'
-        button.addEventListener('click', (e) => { })
+        button.addEventListener('click', (e) => {
+            document.dispatchEvent(new CustomEvent('changeQuestion', {
+                detail: {
+                    index: this.lessonIndex + 1
+                }
+            }))
+        })
         this.cardContent.appendChild(button)
     }
 
@@ -71,6 +89,7 @@ class FormCard {
         this.lesson = lesson
         this.lessonQuestionsLength = Object.keys(this.lesson.content).length
     }
+
 }
 
 class StepperButtons {
@@ -92,8 +111,9 @@ class StepperButtons {
         })
 
         document.addEventListener('changeQuestion', (e) => {
+            console.log(e);
             const newIndex = e.detail.index
-            this.changeColorButton(newIndex, 2)
+            this.changeColorButton(newIndex - 1, 2)
         })
     }
 
@@ -131,7 +151,7 @@ class StepButton {
     button
 
     constructor(index) {
-        this.index = index
+        this.index = index + 1
         this.create()
         this.button.addEventListener('click', (e) => {
             document.dispatchEvent(new CustomEvent('changeQuestion', {
@@ -144,10 +164,10 @@ class StepButton {
 
     create() {
         const button = document.createElement('button')
-        button.innerText = this.index + 1
+        button.innerText = this.index
         button.classList.add('btn', 'btn-sm')
-        button.setAttribute('data-question-index', this.index + 1)
-        if (this.index == 0) {
+        button.setAttribute('data-question-index', this.index)
+        if (this.index == 1) {
             button.classList.add('btn-secondary')
         } else {
             button.classList.add('btn-outline-secondary')
@@ -194,15 +214,21 @@ class FormControll {
             if (isCorrect) { this.correct() } else { this.wrong() }
         })
 
-        document.addEventListener('changeQuestion', (e) => {
-            const newIndex = e.detail.index
-            this.changeColorButton(newIndex, 2)
+        document.addEventListener('newQuestion', (e) => {
+            const question = e.detail.question
+            const index = e.detail.index
+            this.setLabel(question.espa)
+            this.setCorrectAnswer(question.ucra)
+            this.input.value = ''
+            this.input.classList.remove('is-invalid', 'is-valid')
+            this.lessonIndex = index
         })
     }
 
     checkWord() {
         const word = this.input.value
         const lessonIndex = this.lessonIndex - 1
+
         let validation;
         if (word.toLowerCase().trim() == this.correctAnswer.toLowerCase().trim()) {
             validation = new CustomEvent('validationWord', {
@@ -219,7 +245,6 @@ class FormControll {
                 }
             })
         }
-        console.log(lessonIndex);
         document.dispatchEvent(validation)
     }
 
@@ -270,7 +295,7 @@ class FormControll {
     }
 
     setCorrectAnswer(correctAnswer) {
-
+        this.correctAnswer = correctAnswer
     }
 }
 

@@ -56,7 +56,7 @@ class CardComponent {
 			<div class="card-body p-0 clickable" data-bs-toggle="collapse" data-bs-target="#collapse${this.identifier}" aria-expanded="false" aria-controls="collapse${this.identifier}">
 				<div class="card-header d-flex align-items-center gap-3">
 					<i class="bi ${this.icon} fs-5"></i>
-					<div class="vstack">
+					<div class="vstack justify-content-center">
 						<h5 class="card-title">
 							${this.title}
 							${this.phoneme ? '<span class="text-phoneme text-color-main-yellow">' + this.phoneme + '</span>' : ''}
@@ -249,7 +249,7 @@ for (const letter of alphabetJsonData) {
 }
 
 for (const [lessonKey, content] of Object.entries(allDataJsonData)) {
-	const card = new CardComponent(lessonKey + '. ' + content.title, '', '', lessonKey, '')
+	const card = new CardComponent(lessonKey + '. ' + content.title, '', '', lessonKey, content.icon)
 	card.create()
 	const cardList = new CardListComponent(card, lessonKey)
 	cardList.create()

@@ -63,6 +63,7 @@ class FormCard {
         )
         this.cardContent.appendChild(this.formControll.label)
         this.cardContent.appendChild(this.formControll.inputGroup)
+        this.cardContent.appendChild(this.formControll.helpMessage)
     }
 
     generateQuestionsButtons() {
@@ -197,6 +198,12 @@ class FormControll {
     input
     button
     inputGroup
+    helpMessage
+
+    messages = {
+        'good': ['¡Weep!', '¡Wip!', 'дуже добре', 'добре', 'Oso ondo'],
+        'bad': ['Oyoyoy', 'Uhm...', 'No no']
+    }
 
     constructor(spaWord, ucraWord, lessonIndex) {
         this.labelText = spaWord
@@ -207,11 +214,18 @@ class FormControll {
         this.generateInput()
         this.generateButton()
         this.generateInputGroup()
+        this.generateHelpMessage()
 
         this.button.addEventListener('click', (e) => this.checkWord())
         document.addEventListener('validationWord', (e) => {
             const isCorrect = e.detail.correct
-            if (isCorrect) { this.correct() } else { this.wrong() }
+            if (isCorrect) {
+                this.correct()
+            } else {
+                this.wrong()
+            }
+
+            this.printMesssage(isCorrect)
         })
 
         document.addEventListener('newQuestion', (e) => {
@@ -222,6 +236,8 @@ class FormControll {
             this.input.value = ''
             this.input.classList.remove('is-invalid', 'is-valid')
             this.lessonIndex = index
+            this.helpMessage.innerText = ''
+            this.helpMessage.classList.add('d-none')
         })
     }
 
@@ -264,6 +280,26 @@ class FormControll {
         label.setAttribute('for', 'lessonLabel')
         label.innerText = this.labelText
         this.label = label
+    }
+
+    printMesssage(isCorrect) {
+        const availableMessages = isCorrect ? this.messages.good : this.messages.bad
+        const randomElement = availableMessages[Math.floor(Math.random() * availableMessages.length)]
+        this.helpMessage.classList.remove('d-none')
+        if (isCorrect) {
+            this.helpMessage.classList.add('text-success')
+            this.helpMessage.classList.remove('text-danger')
+        } else {
+            this.helpMessage.classList.remove('text-success')
+            this.helpMessage.classList.add('text-danger')
+        }
+        this.helpMessage.innerText = randomElement
+    }
+
+    generateHelpMessage() {
+        const p = document.createElement('p')
+        p.classList.add('d-none', 'mb-0')
+        this.helpMessage = p
     }
 
     generateInput() {

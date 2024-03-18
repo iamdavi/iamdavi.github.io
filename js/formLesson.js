@@ -303,6 +303,7 @@ class ProgressBar {
     total
     value
     color
+    bar
 
     constructor(total, color = null, value = 0) {
         this.total = total
@@ -312,6 +313,11 @@ class ProgressBar {
 
     startForm(e) {
         console.log(e);
+    }
+
+    setCorrects(numCorrect) {
+        const width = (numCorrect * 100) / this.total;
+        this.bar.style.width = `${width}%`
     }
 
     create() {
@@ -324,10 +330,12 @@ class ProgressBar {
         progress.style.width = this.value
 
         const progressBar = document.createElement('div')
-        progressBar.classList.add('progress-bar')
+        progressBar.classList.add('progress-bar', 'h-100', 'progress-bar-striped', 'progress-bar-animated')
         if (this.color) progressBar.classList.add('bg-' + this.color)
 
         progress.appendChild(progressBar)
+
+        this.bar = progress
         return progress
     }
 }
@@ -341,12 +349,39 @@ class ProgressStackBar {
     corrects
     wrong
 
+    totalData
+
     constructor(total) {
+        this.totalData = {}
         this.total = total
         this.correctBar = new ProgressBar(total, 'success')
         this.worngBar = new ProgressBar(total, 'danger')
 
         this.generateStackBar()
+        document.addEventListener('validationWord', (e) => {
+            const index = e.detail.index
+            const isCorrect = e.detail.correct
+            this.totalData[index] = isCorrect
+            this.updateProgressBars()
+        })
+    }
+
+    updateProgressBars() {
+        let correct = 0
+        let wrong = 0
+        for (const [index, isCorrect] of Object.entries(this.totalData)) {
+            if (isCorrect) {
+                correct++;
+            } else {
+                wrong++;
+            }
+        }
+        this.correctBar.setCorrects(correct)
+        this.worngBar.setCorrects(wrong)
+
+        this.stackBar.querySelector('#counterPositive').innerText = correct
+        this.stackBar.querySelector('#counterNegative').innerText = wrong
+        this.stackBar.querySelector('#counterTotal').innerText = `${correct + wrong}/${this.total}`
     }
 
     generateStackBar() {
@@ -356,7 +391,27 @@ class ProgressStackBar {
         stack.appendChild(this.correctBar.create())
         stack.appendChild(this.worngBar.create())
 
-        this.stackBar = stack
+        const divCount = document.createElement('div')
+        divCount.classList.add('d-flex', 'justify-content-between')
+        const positive = document.createElement('span')
+        positive.id = 'counterPositive'
+        positive.innerText = '0'
+        const total = document.createElement('span')
+        total.innerText = `0/${this.total}`
+        total.id = 'counterTotal'
+        const negative = document.createElement('span')
+        negative.innerText = '0'
+        negative.id = 'counterNegative'
+
+        divCount.appendChild(positive)
+        divCount.appendChild(total)
+        divCount.appendChild(negative)
+
+        const container = document.createElement('div')
+        container.appendChild(stack)
+        container.appendChild(divCount)
+
+        this.stackBar = container
     }
 }
 

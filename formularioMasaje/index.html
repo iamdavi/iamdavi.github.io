@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TBB encuesta - "Masajes"</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-primary text-primary-emphasis">
+	<div class="container-fluid bg-primary-subtle">
+		<div class="row mh-50-vh">
+			<div class="col-12 my-5 d-flex">
+				<img src="./img/TBB_logo_letters.svg" height="250px" alt="" class="m-auto">
+			</div>
+		</div>
+	</div>
+	<form id="masajeForm">
+		<div class="container mt--40">
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8 col-lg-6">
+					<div class="card card-body">
+						<h3 class="text-center limelight-regular my-3">
+							Cuestionario sobre "masajes"
+						</h3>
+						<div class="text-center">
+							<label for="valoracionGeneral" class="form-label">
+								Antes de empezar,
+								<span class="fw-bold">
+									¿cuál es tu valoración de los
+									<a href="#" data-bs-toggle="tooltip"
+										data-bs-title="Siempre que se hable de masaje o masajistas se refiere a... 😏😉🍆💦"
+										class="link-underline-primary">
+										masajes
+										<i class="bi bi-info-circle-fill"></i>
+									</a>
+									?
+								</span>
+							</label>
+							<div id="valoracion-number">
+								<span id="range-value">0</span>
+								/10
+							</div>
+							<input type="range" class="form-range px-1" value="0" min="0" max="10" step="1"
+								id="valoracionGeneral">
+							<div class="d-flex justify-content-between" style="margin-top: -8px;">
+								<i class="fs-4 bi bi-emoji-frown-fill"></i>
+								<i class="fs-4 bi bi-emoji-expressionless-fill"></i>
+								<i class="fs-4 bi bi-emoji-laughing-fill"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8 col-lg-6">
+					<div class="card card-body">
+						<div class="mb-0">
+							<label for="valoracionMasajista" class="form-label">
+								Describe tu experiencia general con el <span class="fw-semibold">masajista
+									Давідка</span>:
+							</label>
+							<textarea class="form-control" id="valoracionMasajista"
+								placeholder="Me encanta la forma y delicadeza con la que sus dedos recorren las curvas de mi cuerpo, desde mi pelo, pasando por mis..."
+								rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8">
+					<div class="card">
+						<div class="card-body mb-0">
+							<label for="posiciones" class="form-label text-primary-emphasis">
+								Selecciona tus <b>posiciones</b> de masajes
+								<span class="fw-semibold">
+									favoritas ( <i class="bi bi-heart-fill text-danger"></i> )
+								</span>
+								y las que te
+								<span class="fw-semibold">
+									gustaría probar ( <i class="bi bi-star-fill text-warning"></i> )
+								</span>:
+							</label>
+							<div id="position-card-wrapper" class="gap-3 overfow-y-auto pb-3">
+							</div>
+						</div>
+						<div class="card-footer text-body-secondary text-end pt-1">
+							<i>
+								<a href="https://sexpositions.club/" target="_blank" class="link-offset-3">
+									sexpositions.club
+									<i class="bi bi-box-arrow-up-right"></i>
+								</a>
+							</i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8">
+					<div class="card">
+						<div class="card-body mb-0 pb-0">
+							<label for="posiciones" class="form-label text-primary-emphasis">
+								Selecciona tus <b>categorias</b> de masajes
+								<span class="fw-semibold">
+									favoritas ( <i class="bi bi-heart-fill text-danger"></i> )
+								</span>
+								y las que te
+								<span class="fw-semibold">
+									gustaría probar ( <i class="bi bi-star-fill text-warning"></i> )
+								</span>:
+							</label>
+							<div id="categories-card-wrapper" class="gap-3 overfow-y-auto">
+							</div>
+						</div>
+						<div class="card-footer text-body-secondary text-end pt-1">
+							<i>
+								<a href="https://sexpositions.club/#:~:text=all%20sorted%20out.-,Categories%20of%20Sex%20Positions,them%20down%20into%20various%20categories%2C%20which%20you%20can%20explore%20right%20below.,-Position%20type%3A"
+									target="_blank" class="link-offset-3">
+									sexpositions.club (categorias)
+									<i class="bi bi-box-arrow-up-right"></i>
+								</a>
+							</i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8 col-lg-6">
+					<div class="card">
+						<div class="row g-0">
+							<div class="col-md-4">
+								<img src="./img/zarik_sexy.jpg" class="img-fluid rounded-start"
+									alt="Foto sexy de Zarik">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body">
+									<h5 class="card-title limelight-regular text-primary-emphasis">
+										El Zarik más sexy
+									</h5>
+									<p class="card-text text-primary-emphasis">
+										¿Cúal es la importancia de Zarik durante un masaje?
+									</p>
+									<div id="zarik-list" class="zarik-list">
+										<div class="zarik-list-option">
+											<i class="bi bi-square"></i>
+											<span>
+												No me gustan sus ruidos y su lengua.
+											</span>
+										</div>
+										<div class="zarik-list-option">
+											<i class="bi bi-square"></i>
+											<span>
+												Me molesta tener que apartarlo durante le masaje.
+											</span>
+										</div>
+										<div class="zarik-list-option">
+											<i class="bi bi-square"></i>
+											<span>
+												No me molesta que esté por la cama.
+											</span>
+										</div>
+										<div class="zarik-list-option">
+											<i class="bi bi-square"></i>
+											<span>
+												Me gusta tenerlo en la cama.
+											</span>
+										</div>
+										<div class="zarik-list-option">
+											<i class="bi bi-square"></i>
+											<span>
+												Me gusta que me chupe durante el masaje.
+											</span>
+										</div>
+										<div class="zarik-list-option">
+											<i class="bi bi-square"></i>
+											<span>
+												Me encanta que participe en el masaje, no me puedo imaginar un masaje
+												sin el.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8 col-lg-6">
+					<div class="card card-body">
+						<div class="mb-0">
+							<label for="mejorExperiencia" class="form-label">
+								¿Cuál es la mejor experiencia que has tenido durante un masaje?
+							</label>
+							<textarea class="form-control" id="mejorExperiencia"
+								placeholder="Aquél día que al ir al baño para ducharnos nos distraímos en la ducha, secandonos..."
+								rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8 col-lg-6">
+					<div class="card card-body">
+						<div class="mb-0">
+							<label for="peticion" class="form-label">
+								¿Alguna petición para Давідка para que mejore en sus masajes?
+							</label>
+							<textarea class="form-control" id="peticion"
+								placeholder="Me gustaría que usase más la lengua, que tardase más tiempo para 'negative distance' y que me haga tener más ganas..."
+								rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center mb-4">
+				<div class="col-12 col-md-8 col-lg-6">
+					<button id="send-form-button" class="btn btn-primary w-100">
+						Enviar formulario
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div class="modal fade" id="dialogResult" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">¡Formulario acabado!</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div>
+						<pre id="resultText"></pre>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="copyResult" type="button" class="btn btn-success w-100">Copiar resultado en
+						portapapeles</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+	<script src="./positionData.js"></script>
+	<script src="./categoriesData.js"></script>
+	<script src="./main.js"></script>
+
+</body>
+
+</html>

@@ -59,7 +59,7 @@ class PositionCard {
           bestPositionFooter ? "border-primary" : ""
         } d-flex flex-column">
             <p class="mb-2 text-center fw-semibold">${this.index}. ${name}</p>
-            <img class="m-auto position-img" width="150" src="./img/prueba.png" alt="${name}" />
+            <img class="m-auto position-img" width="150" src="${url}" alt="${name}" />
             <div class="d-flex justify-content-between px-3 mt-1">
               <i class="bi bi-heart text-danger cursor-pointer"></i> 
               <i class="bi bi-star text-warning cursor-pointer"></i> 

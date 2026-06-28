@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Caprice — Chuches, Globos y Regalos en Errenteria</title>
+  <meta name="description" content="Tienda de golosinas, globos y regalos en Beraun, Errenteria. Mesas de chuches para comuniones y cumpleaños. Pide por WhatsApp fácil y rápido." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://petitcaprice.es/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Petit Caprice | Tu tienda de chuches en Beraun, Errenteria" />
+  <meta property="og:description" content="Golosinas, globos y detalles para tus fiestas. Mesas de chuches para comuniones y cumpleaños. Estamos en Beraun, Errenteria. Pide por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://petitcaprice.es/" />
+  <meta property="og:image" content="assets/img/og-image.webp" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Petit Caprice — Chuches, Globos y Regalos en Errenteria" />
+  <meta name="twitter:description" content="Tu tienda de chuches y globos en Beraun, Errenteria. Mesas de chuches para tus fiestas." />
+  <meta name="twitter:image" content="assets/img/og-image.webp" />
+
+  <!-- Schema LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Petit Caprice",
+    "description": "Tienda de golosinas, globos y artículos de regalo en Beraun, Errenteria",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[COMPLETAR dirección exacta]",
+      "addressLocality": "Errenteria",
+      "addressRegion": "Gipuzkoa",
+      "postalCode": "20100",
+      "addressCountry": "ES"
+    },
+    "telephone": "[COMPLETAR teléfono]",
+    "url": "https://petitcaprice.es/",
+    "sameAs": [
+      "https://www.instagram.com/petitcapriceventos/",
+      "https://www.facebook.com/p/Petitcaprice-100057438198250/"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Hacéis mesas de chuches para comuniones y cumpleaños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, es uno de nuestros servicios más pedidos. Diseñamos la mesa a tu medida: elige los colores, los tipos de dulces y el tamaño según el número de invitados. Solo necesitamos que nos lo digas con un poco de antelación. Escríbenos por WhatsApp y lo hablamos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo hacer un pedido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Por WhatsApp — es la forma más rápida y cómoda. Cuéntanos qué necesitas y para cuándo, y te confirmamos enseguida. También puedes llamarnos o pasarte directamente por la tienda en Beraun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Con cuánta antelación hay que encargar la mesa de chuches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cuanto antes mejor, especialmente en temporada de comuniones (abril-junio). Para eventos con decoración personalizada recomendamos al menos una semana de antelación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tenéis globos de helio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, trabajamos con globos de látex y de helio. También hacemos ramos de globos y decoraciones para eventos. Dinos para qué ocasión es y te aconsejamos la mejor opción."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Podéis encargar algo concreto que no tengáis en stock?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En muchos casos sí. Escríbenos por WhatsApp con lo que buscas y miramos cómo conseguirlo."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav-logo" aria-label="Petit Caprice — inicio">
+        <span class="nav-logo-text">Petit Caprice</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="#productos" class="nav-link">Productos</a></li>
+        <li><a href="#eventos" class="nav-link">Eventos</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#contacto" class="nav-link">Dónde estamos</a></li>
+        <li class="nav-cta-item">
+          <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20en%20Petit%20Caprice.%20%C2%BFMe%20pod%C3%A9is%20ayudar%3F" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Pedir por WhatsApp
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title" id="hero-title">Para cada capricho,<br>estamos en Beraun</h1>
+        <p class="hero-subtitle">Chuches, globos y artículos de regalo para el día a día y para tus fiestas más especiales. Pide lo que necesites por WhatsApp — lo preparamos con cariño.</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20en%20Petit%20Caprice.%20%C2%BFMe%20pod%C3%A9is%20ayudar%3F" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Pedir por WhatsApp
+          </a>
+          <a href="#productos" class="btn btn-secondary btn-lg">Ver qué tenemos</a>
+        </div>
+        <p class="hero-trust">
+          <i data-lucide="map-pin" aria-hidden="true"></i>
+          Tu tienda de barrio en Beraun, Errenteria
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ PROPUESTA DE VALOR ═══════════════════════════ -->
+    <section class="value-props" aria-label="Por qué elegirnos">
+      <div class="container">
+        <div class="value-grid">
+
+          <div class="value-item fade-in">
+            <div class="value-icon" aria-hidden="true">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3 class="value-title">Tu tienda de siempre</h3>
+            <p class="value-desc">Llevamos años en Beraun, conocemos a nuestros clientes y sabemos lo que necesitan. No somos una cadena — somos los del barrio.</p>
+          </div>
+
+          <div class="value-item fade-in">
+            <div class="value-icon" aria-hidden="true">
+              <i data-lucide="party-popper"></i>
+            </div>
+            <h3 class="value-title">Mesas de chuches a tu medida</h3>
+            <p class="value-desc">Comuniones, cumpleaños, bodas, graduaciones. Diseñamos la mesa de golosinas perfecta para tu fiesta, con los colores y los dulces que tú elijas.</p>
+          </div>
+
+          <div class="value-item fade-in">
+            <div class="value-icon" aria-hidden="true">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <h3 class="value-title">Pide sin complicaciones</h3>
+            <p class="value-desc">Escríbenos por WhatsApp, cuéntanos qué necesitas y en cuánto tiempo lo quieres. Nada de formularios eternos ni esperas interminables.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ PRODUCTOS ═══════════════════════════════ -->
+    <section class="productos" id="productos" aria-labelledby="productos-title">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2 class="section-title" id="productos-title">Para cada capricho,<br>tenemos algo</h2>
+          <p class="section-subtitle">Desde un puñado de chuches hasta la decoración completa de tu fiesta. Pasa a vernos o escríbenos — siempre encontramos lo que buscas.</p>
+        </header>
+
+        <div class="productos-grid">
+
+          <article class="producto-card fade-in">
+            <div class="producto-icon" aria-hidden="true">
+              <i data-lucide="candy"></i>
+            </div>
+            <h3 class="producto-title">Chuches de toda la vida</h3>
+            <p class="producto-desc">Gominolas, regalices, caramelos, pica-pica, nubes y mucho más. El clásico que nunca falla.</p>
+          </article>
+
+          <article class="producto-card fade-in">
+            <div class="producto-icon" aria-hidden="true">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h3 class="producto-title">Globos para toda ocasión</h3>
+            <p class="producto-desc">Globos de látex, de helio, ramos de globos decorados, arcos. Le damos color a cualquier celebración.</p>
+          </article>
+
+          <article class="producto-card fade-in">
+            <div class="producto-icon" aria-hidden="true">
+              <i data-lucide="gift"></i>
+            </div>
+            <h3 class="producto-title">Detalles que se recuerdan</h3>
+            <p class="producto-desc">Artículos de regalo personalizados, bolsas, cajas, detalles para invitados. El pequeño capricho que marca la diferencia.</p>
+          </article>
+
+          <article class="producto-card fade-in">
+            <div class="producto-icon" aria-hidden="true">
+              <i data-lucide="book-open"></i>
+            </div>
+            <h3 class="producto-title">Prensa de barrio</h3>
+            <p class="producto-desc">Periódicos, revistas y publicaciones de la semana. El otro capricho del día a día.</p>
+          </article>
+
+        </div>
+
+        <div class="section-cta fade-in">
+          <p>¿Buscas algo que no ves aquí?</p>
+          <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20estoy%20buscando%20algo%20concreto.%20%C2%BFMe%20pod%C3%A9is%20ayudar%3F" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ EVENTOS ═══════════════════════════════ -->
+    <section class="eventos" id="eventos" aria-labelledby="eventos-title">
+      <div class="container">
+        <div class="eventos-layout">
+
+          <div class="eventos-content fade-in">
+            <h2 class="section-title" id="eventos-title">Mesas de chuches<br>para tus fiestas</h2>
+            <p class="section-subtitle">¿Tienes una comunión, un cumpleaños o una celebración entre manos? Nosotros nos encargamos de que la mesa de chuches sea lo más bonita de la fiesta.</p>
+            <p class="eventos-body">Diseñamos la mesa a tu medida: elige los colores, los dulces y el tamaño. Coordinamos con la decoración del evento para que todo encaje. Solo tienes que decírnoslo con un poco de antelación y nosotros lo preparamos todo.</p>
+
+            <ul class="eventos-list" aria-label="Tipos de eventos">
+              <li><i data-lucide="check" aria-hidden="true"></i> Comuniones</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Cumpleaños</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Bodas y bautizos</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Graduaciones</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Eventos de empresa</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Fiestas de barrio</li>
+            </ul>
+
+            <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20estoy%20organizando%20una%20celebraci%C3%B3n%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20una%20mesa%20de%20chuches.%20%C2%BFPodemos%20hablarlo%3F" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle" aria-hidden="true"></i>
+              Cuéntanos tu fiesta
+            </a>
+          </div>
+
+          <div class="eventos-visual fade-in" aria-hidden="true">
+            <div class="eventos-img-placeholder">
+              <img src="assets/img/eventos-mesa.webp" alt="Mesa de chuches decorada para una comunión preparada en Petit Caprice, Errenteria" width="600" height="500" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ CÓMO PEDIR ═══════════════════════════ -->
+    <section class="como-pedir" id="pedir" aria-labelledby="pedir-title">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2 class="section-title" id="pedir-title">Pedir es fácil —<br class="break-mobile">te lo prometemos</h2>
+          <p class="section-subtitle">Sin complicaciones. Solo escríbenos.</p>
+        </header>
+
+        <ol class="pasos-list" role="list">
+
+          <li class="paso fade-in">
+            <div class="paso-numero" aria-hidden="true">1</div>
+            <div class="paso-icon" aria-hidden="true"><i data-lucide="message-circle"></i></div>
+            <h3 class="paso-title">Escríbenos por WhatsApp</h3>
+            <p class="paso-desc">Cuéntanos qué necesitas: tipo de producto, cantidad y cuándo lo quieres.</p>
+          </li>
+
+          <li class="paso fade-in">
+            <div class="paso-numero" aria-hidden="true">2</div>
+            <div class="paso-icon" aria-hidden="true"><i data-lucide="package"></i></div>
+            <h3 class="paso-title">Lo preparamos con cariño</h3>
+            <p class="paso-desc">Te confirmamos disponibilidad y lo tenemos listo para cuando vengas.</p>
+          </li>
+
+          <li class="paso fade-in">
+            <div class="paso-numero" aria-hidden="true">3</div>
+            <div class="paso-icon" aria-hidden="true"><i data-lucide="map-pin"></i></div>
+            <h3 class="paso-title">Recógelo en la tienda</h3>
+            <p class="paso-desc">Pasa por Petit Caprice en Beraun y lo tienes. Así de sencillo.</p>
+          </li>
+
+        </ol>
+
+        <div class="section-cta fade-in">
+          <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20en%20Petit%20Caprice.%20%C2%BFMe%20pod%C3%A9is%20ayudar%3F" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Escríbenos ahora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ GALERÍA ═══════════════════════════════ -->
+    <section class="galeria" id="galeria" aria-labelledby="galeria-title">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2 class="section-title" id="galeria-title">Así quedan nuestras creaciones</h2>
+          <p class="section-subtitle">Mesas de chuches, ramos de globos, detalles para fiestas. Todo hecho con ganas en Beraun.</p>
+        </header>
+
+        <div class="galeria-grid" role="list" aria-label="Galería de productos">
+          <figure class="galeria-item fade-in" role="listitem">
+            <img src="assets/img/galeria-1.webp" alt="Mesa de chuches para comunión" width="400" height="400" loading="lazy" />
+          </figure>
+          <figure class="galeria-item fade-in" role="listitem">
+            <img src="assets/img/galeria-2.webp" alt="Ramo de globos de colores" width="400" height="400" loading="lazy" />
+          </figure>
+          <figure class="galeria-item fade-in" role="listitem">
+            <img src="assets/img/galeria-3.webp" alt="Surtido de golosinas y chuches" width="400" height="400" loading="lazy" />
+          </figure>
+          <figure class="galeria-item fade-in" role="listitem">
+            <img src="assets/img/galeria-4.webp" alt="Decoración de cumpleaños con globos" width="400" height="400" loading="lazy" />
+          </figure>
+          <figure class="galeria-item fade-in" role="listitem">
+            <img src="assets/img/galeria-5.webp" alt="Mesa de dulces para boda" width="400" height="400" loading="lazy" />
+          </figure>
+          <figure class="galeria-item fade-in" role="listitem">
+            <img src="assets/img/galeria-6.webp" alt="Artículos de regalo personalizados" width="400" height="400" loading="lazy" />
+          </figure>
+        </div>
+
+        <div class="galeria-instagram fade-in">
+          <p>Síguenos en Instagram para ver más</p>
+          <a href="https://www.instagram.com/petitcapriceventos/" target="_blank" rel="noopener noreferrer" class="instagram-link" aria-label="Ir al Instagram de Petit Caprice (@petitcapriceventos)">
+            <i data-lucide="instagram" aria-hidden="true"></i>
+            @petitcapriceventos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ CONTACTO ═══════════════════════════════ -->
+    <section class="contacto" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2 class="section-title" id="contacto-title">Estamos en el barrio</h2>
+          <p class="section-subtitle">En Beraun, Errenteria. Ven a vernos o escríbenos antes — te esperamos.</p>
+        </header>
+
+        <div class="contacto-layout">
+
+          <div class="contacto-mapa fade-in">
+            <!-- COMPLETAR: reemplazar con iframe de Google Maps del local -->
+            <div class="mapa-placeholder" aria-label="Mapa de ubicación de Petit Caprice en Beraun, Errenteria">
+              <iframe
+                title="Ubicación de Petit Caprice en Beraun, Errenteria"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.5!2d-1.9011!3d43.3145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE4JzUyLjIiTiAxwrA1NCcwMy45Ilc!5e0!3m2!1ses!2ses!4v1234567890"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="contacto-info fade-in">
+            <dl class="info-list">
+
+              <div class="info-item">
+                <dt>
+                  <i data-lucide="map-pin" aria-hidden="true"></i>
+                  Dirección
+                </dt>
+                <dd>
+                  [COMPLETAR dirección exacta]<br>
+                  Barrio de Beraun<br>
+                  20100 Errenteria, Gipuzkoa
+                </dd>
+              </div>
+
+              <div class="info-item">
+                <dt>
+                  <i data-lucide="clock" aria-hidden="true"></i>
+                  Horario
+                </dt>
+                <dd>
+                  [COMPLETAR horario]<br>
+                  <small>Ampliamos horario en las fiestas de Beraun</small>
+                </dd>
+              </div>
+
+              <div class="info-item">
+                <dt>
+                  <i data-lucide="phone" aria-hidden="true"></i>
+                  Teléfono
+                </dt>
+                <dd>
+                  <a href="tel:+34XXXXXXXXXX">[COMPLETAR número]</a>
+                </dd>
+              </div>
+
+              <div class="info-item">
+                <dt>
+                  <i data-lucide="message-circle" aria-hidden="true"></i>
+                  WhatsApp
+                </dt>
+                <dd>
+                  <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer">
+                    Escríbenos aquí
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+            <div class="contacto-redes">
+              <a href="https://www.instagram.com/petitcapriceventos/" target="_blank" rel="noopener noreferrer" class="red-social" aria-label="Instagram de Petit Caprice">
+                <i data-lucide="instagram" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.facebook.com/p/Petitcaprice-100057438198250/" target="_blank" rel="noopener noreferrer" class="red-social" aria-label="Facebook de Petit Caprice">
+                <i data-lucide="facebook" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <a href="https://maps.google.com/?q=Petit+Caprice+Beraun+Errenteria" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i data-lucide="navigation" aria-hidden="true"></i>
+              Cómo llego
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-marca">
+          <p class="footer-logo">Petit Caprice</p>
+          <p class="footer-tagline">Tu capricho dulce en Beraun</p>
+          <div class="footer-redes">
+            <a href="https://www.instagram.com/petitcapriceventos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Petit Caprice">
+              <i data-lucide="instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/p/Petitcaprice-100057438198250/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Petit Caprice">
+              <i data-lucide="facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h3 class="footer-heading">Dónde estamos</h3>
+          <address>
+            [COMPLETAR dirección]<br>
+            Beraun, Errenteria<br>
+            Gipuzkoa
+          </address>
+        </div>
+
+        <div class="footer-info">
+          <h3 class="footer-heading">Horario</h3>
+          <p>[COMPLETAR horario]</p>
+          <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." class="footer-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Pedir por WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Petit Caprice · Errenteria, Gipuzkoa</p>
+        <nav aria-label="Legal">
+          <a href="/aviso-legal.html">Aviso legal</a>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/cookies.html">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ BOTÓN WHATSAPP FLOTANTE ═══════════════════════════ -->
+  <a
+    href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20en%20Petit%20Caprice.%20%C2%BFMe%20pod%C3%A9is%20ayudar%3F"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pedir por WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-label">Pedir ahora</span>
+  </a>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
